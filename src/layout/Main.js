@@ -6,7 +6,7 @@ import Navbar from '../pages/Shared/Navbar/Navbar';
 const Main = () => {
     return (
         <div>
-            <div className="flex h-screen">
+            <div className="flex h-screen ">
                 <Sidenav></Sidenav>
                 <div className="flex flex-col flex-1">
                     <Navbar></Navbar>

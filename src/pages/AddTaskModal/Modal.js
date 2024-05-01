@@ -2,9 +2,11 @@ import { Dialog, Transition } from '@headlessui/react';
 import React, { Fragment } from 'react';
 
 const Modal = ({ isOpen, setIsOpen, children, title }) => {
-    function closeModal() {
+
+    const closeModal = () => {
         setIsOpen(false)
     }
+
     return (
         <>
             <Transition appear show={isOpen} as={Fragment}>
@@ -35,7 +37,7 @@ const Modal = ({ isOpen, setIsOpen, children, title }) => {
                                 <Dialog.Panel className="w-full max-w-md p-6 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
                                     <Dialog.Title
                                         as="h3"
-                                        className="text-lg font-medium leading-6 text-gray-900"
+                                        className="text-lg font-medium leading-6 text-gray-900 text-center"
                                     >
                                         {title}
                                     </Dialog.Title>

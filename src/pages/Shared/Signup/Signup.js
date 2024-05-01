@@ -27,28 +27,28 @@ const Signup = () => {
                 userUpdateProfile(data.name)
                     .then(() => {
                         // Profile updated!
-                        //save user in database
-                        // fetch('/users', {
-                        //     method: "POST",
-                        //     headers: {
-                        //         'content-type': 'application/json'
-                        //     },
-                        //     body: JSON.stringify(saveUser)
-                        // })
-                        //     .then(res => res.json())
-                        //     .then(data => {
-                        //         if (data.insertedId) {
-                        //             reset()
-                        //             Swal.fire({
-                        //                 position: "top-center",
-                        //                 icon: "success",
-                        //                 title: "Login Successfully done !!",
-                        //                 showConfirmButton: false,
-                        //                 timer: 1500
-                        //             });
-                        //             navigate(from, { replace: true });
-                        //         }
-                        // })
+                        // save user in database
+                        fetch('https://task-management-server-0cxv.onrender.com/users', {
+                            method: "POST",
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveUser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    reset()
+                                    Swal.fire({
+                                        position: "top-center",
+                                        icon: "success",
+                                        title: "Login Successfully done !!",
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    navigate(from, { replace: true });
+                                }
+                            })
 
                     }).catch((err) => {
                         setError(err.message)
